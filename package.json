@@ -1,12 +1,9 @@
 {
   "name": "node-dev-fx",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "description": "",
   "main": "index.js",
-  "dependencies": {
-    "webpack-cli": "^3.3.0",
-    "webpack": "^4.29.6"
-  },
+  "dependencies": {},
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

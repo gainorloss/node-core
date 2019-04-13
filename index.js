@@ -1,3 +1,5 @@
+'use strict';
+
 const httpServer=require('./components/httpServer');
 const readme=require('./components/readme');
 const logger=require('./components/logger');

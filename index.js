@@ -1,16 +1,11 @@
-const http = require('http');
-
-function _createServer(callback) {
-    const httpServer = http.createServer(function (req, res) {
-        res.setHeader("ContentType", "text/html;charset=utf8");
-
-        callback(res);//response callback.
-    });
-    httpServer.listen(3000, "localhost");
-}
+const httpServer=require('./components/httpServer');
+const readme=require('./components/readme');
+const logger=require('./components/logger');
 
 const fx = {
-    httpServer: {},
+    httpServer,
+    readme,
+    logger
 };
 fx.hooks = {};
 
@@ -39,14 +34,8 @@ fx.runHook = function (hookName) {
 
 fx.run = function () {
     fx.runHook("before_run");
-    console.log('Hello,my name is node-core-fx.');
+    logger.info('Hello,my name is node-core-fx.');
     fx.runHook("after_run");
-}
-
-fx.httpServer.write = function (html) {
-    _createServer(function (res) {
-        res.end(html);
-    });
 }
 
 fx.run();

@@ -17,7 +17,7 @@ const logger = {};
 logger.debug = function (msg) {
     var time=__getCurrentTime();
 
-    var output=['[',time,' ','info',']',':',msg].join('');
+    var output=['[',time,' ','debug',']',':',msg].join('');
     console.log(output);
 }
 

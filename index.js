@@ -3,12 +3,22 @@
 const httpServer=require('./components/httpServer');
 const readme=require('./components/readme');
 const logger=require('./components/logger');
+const application=require('./components/application');
+const scheduler=require('./components/scheduler');
+const htmlDownloader=require('./components/htmlDownloader');
+const htmlParser=require('./components/htmlParser');
 
 const fx = {
     httpServer,
     readme,
-    logger
+    logger,
+    application,
+    scheduler,
+    htmlDownloader,
+    htmlParser
+
 };
+
 fx.hooks = {};
 
 fx.addHook = function (hookName, hookFunction) {

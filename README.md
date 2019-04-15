@@ -2,7 +2,7 @@
 ## install package
 
 ```javascript
-npm i node-core-fx -S
+npm i node-dev-fx -S
 ```
 
 ## import package

@@ -7,6 +7,7 @@ const application=require('./components/application');
 const scheduler=require('./components/scheduler');
 const htmlDownloader=require('./components/htmlDownloader');
 const htmlParser=require('./components/htmlParser');
+const alarmer=require('./components/alarmer');
 
 const fx = {
     httpServer,
@@ -15,8 +16,8 @@ const fx = {
     application,
     scheduler,
     htmlDownloader,
-    htmlParser
-
+    htmlParser,
+    alarmer
 };
 
 fx.hooks = {};

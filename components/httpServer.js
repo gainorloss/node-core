@@ -12,7 +12,7 @@ const httpServer = {
     },
     socketIOHandlers: {
         '/send': function (paras) {
-            logger.info(['socket.io:', '/chat', ' ', JSON.stringify(paras)].join(''));
+            logger.info("httpServer",['socket.io:', '/chat', ' ', JSON.stringify(paras)].join(''));
         }
     }
 };
@@ -54,7 +54,7 @@ httpServer.start = function (host, port) {
             res.setHeader("ContentType", "text/json;charset=utf8");
 
             if (typeof httpServer.handlers[pathName] === 'function') {
-                logger.warning(['get/json', ' ', req.url, ' ', 'success'].join(''));//log request success.
+                logger.warning("httpServer",['get/json', ' ', req.url, ' ', 'success'].join(''));//log request success.
                 var json = httpServer.handlers[pathName](req);
                 res.write(JSON.stringify({
                     status: 0,
@@ -74,7 +74,7 @@ httpServer.start = function (host, port) {
                 if (err) {
                     _returnErr(req, res);
                 } else {
-                    logger.warning(['get', ' ', req.url, ' ', 'success'].join(''));//log request success.
+                    logger.warning("httpServer",['get', ' ', req.url, ' ', 'success'].join(''));//log request success.
                     res.write(data);
                     res.end();
                 }
@@ -95,13 +95,13 @@ httpServer.start = function (host, port) {
     });
 
     server.listen(port, host, function () {
-        logger.warning(["Server started，please visit http://",host,':',port].join(''));
-        logger.info('Socket.io server started,url:/connection');
+        logger.warning("httpServer",["Server started，please visit http://",host,':',port].join(''));
+        logger.info("httpServer",'Socket.io server started,url:/connection');
     })
 }
 
 function _returnErr(req, res) {
-    logger.err(['get', ' ', req.url, ' ', 'failed'].join(''));//log request failed.
+    logger.err("httpServer",['get', ' ', req.url, ' ', 'failed'].join(''));//log request failed.
     res.writeHead(404, { 'ContentType': 'text/html;charset=utf8' });
     res.write("404 Not found");
     res.end();

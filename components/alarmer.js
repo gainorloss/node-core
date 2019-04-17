@@ -24,10 +24,10 @@ alarmer.alarmAdmin = function (msg, title) {
     };
     request(options, function (err, res, body) {
         if (err) {
-            logger.err(err.message);
+            logger.err("alarmer",err.message);
             return;
         };
-        logger.info("Server酱告警成功！");
+        logger.info("alarmer","Server酱告警成功！");
     })
 }
 

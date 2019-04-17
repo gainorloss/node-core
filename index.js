@@ -8,6 +8,7 @@ const scheduler=require('./components/scheduler');
 const htmlDownloader=require('./components/htmlDownloader');
 const htmlParser=require('./components/htmlParser');
 const alarmer=require('./components/alarmer');
+const build=require('./components/build');
 
 const fx = {
     httpServer,
@@ -17,7 +18,8 @@ const fx = {
     scheduler,
     htmlDownloader,
     htmlParser,
-    alarmer
+    alarmer,
+    build
 };
 
 fx.hooks = {};
@@ -47,7 +49,7 @@ fx.runHook = function (hookName) {
 
 fx.run = function () {
     fx.runHook("before_run");
-    logger.info('Hello,my name is node-core-fx.');
+    logger.info('fx','Hello,my name is node-core-fx.');
     fx.runHook("after_run");
 }
 

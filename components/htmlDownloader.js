@@ -18,11 +18,11 @@ htmlDownloader.getHtmlContent = function (url, headers,callback) {
     }
     req.retry(2)
        .then(res => {
-        logger.info(res.text);
+        logger.info("htmlDownloader",res.text);
         callback(res.text);
        })
        .catch(function (err) {
-            logger.err(['doanloader:', 'download', url, ' ', 'failed',',','err:',err.message].join(''));
+            logger.err("htmlDownloader",['doanloader:', 'download', url, ' ', 'failed',',','err:',err.message].join(''));
         });
 }
 

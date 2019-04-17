@@ -50,7 +50,7 @@ server.use(function(req,res){
  * @param {*} res 
  */
 function _returnErr(req, res) {
-    logger.err(['get', ' ', req.url, ' ', 'failed'].join(''));//log request failed.
+    logger.err("application",['get', ' ', req.url, ' ', 'failed'].join(''));//log request failed.
     res.writeHead(404, { 'ContentType': 'text/html;charset=utf8' });
     res.write("404 Not found");
     res.end();
@@ -64,7 +64,7 @@ const application={};
  */
 application.start=function(host,port){
     server.listen(port,host,function (){
-        logger.info(["Server started，please visit http://",host,":",port].join(''));
+        logger.info("application",["Server started，please visit http://",host,":",port].join(''));
     });
 };
 

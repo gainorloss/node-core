@@ -9,6 +9,8 @@ const htmlDownloader=require('./components/htmlDownloader');
 const htmlParser=require('./components/htmlParser');
 const alarmer=require('./components/alarmer');
 const build=require('./components/build');
+const gateway=require('./components/gateway');
+const auth=require('./components/auth');
 
 const fx = {
     httpServer,
@@ -19,7 +21,9 @@ const fx = {
     htmlDownloader,
     htmlParser,
     alarmer,
-    build
+    build,
+    gateway,
+    auth
 };
 
 fx.hooks = {};

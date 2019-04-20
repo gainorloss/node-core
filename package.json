@@ -1,6 +1,6 @@
 {
   "name": "node-dev-fx",
-  "version": "0.1.18",
+  "version": "0.1.20",
   "description": "",
   "main": "index.js",
   "dependencies": {

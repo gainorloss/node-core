@@ -66,7 +66,7 @@ application.authGet = function (path, callback) {
         let obj = auth.decrypt(token);
         logger.warning('application', `token:${token},obj:${obj}`);
         if (!obj) {
-            res.end({ status: 1, code: 400, msg: '认证失败，您未获取访问此api的授权', data: null });
+            res.send({ status: 1, code: 400, msg: '认证失败，您未获取访问此api的授权', data: null });
             return;
         };
         callback(req, res);
@@ -88,7 +88,7 @@ application.authPost = function (path, callback) {
         let token = req.headers['authorization'].split(' ').pop();
         auth.decrypt(token, function (err, obj) {
             if (err) {
-                res.end({ status: 1, code: 400, msg: '认证失败，您未获取访问此api的授权', data: null }); 
+                res.send({ status: 1, code: 400, msg: '认证失败，您未获取访问此api的授权', data: null }); 
                 return;
             }
             logger.warning('application', `token:${token},obj:${obj}`);

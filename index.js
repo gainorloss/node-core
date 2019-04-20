@@ -1,16 +1,17 @@
 'use strict';
 
-const httpServer=require('./components/httpServer');
-const readme=require('./components/readme');
-const logger=require('./components/logger');
-const application=require('./components/application');
-const scheduler=require('./components/scheduler');
-const htmlDownloader=require('./components/htmlDownloader');
-const htmlParser=require('./components/htmlParser');
-const alarmer=require('./components/alarmer');
-const build=require('./components/build');
-const gateway=require('./components/gateway');
-const auth=require('./components/auth');
+const httpServer = require('./components/httpServer');
+const readme = require('./components/readme');
+const logger = require('./components/logger');
+const application = require('./components/application');
+const scheduler = require('./components/scheduler');
+const htmlDownloader = require('./components/htmlDownloader');
+const htmlParser = require('./components/htmlParser');
+const alarmer = require('./components/alarmer');
+const build = require('./components/build');
+const gateway = require('./components/gateway');
+const auth = require('./components/auth');
+const env = require('./components/env');
 
 const fx = {
     httpServer,
@@ -23,7 +24,8 @@ const fx = {
     alarmer,
     build,
     gateway,
-    auth
+    auth,
+    env
 };
 
 fx.hooks = {};
@@ -52,8 +54,9 @@ fx.runHook = function (hookName) {
 }
 
 fx.run = function () {
+    env.display();
     fx.runHook("before_run");
-    logger.info('fx','Hello,my name is node-core-fx.');
+    logger.info('fx', 'Hello,my name is node-core-fx.');
     fx.runHook("after_run");
 }
 

@@ -31,7 +31,7 @@ var parser=fx.htmlParser;
 
 downloader.getHtmlContent("http://visionmedia.github.io/superagent/",{},content=>{
     parser.getItems(content,"h3",function($,i,e){
-        console.log($(e).text());
+        console.log('downloader',$(e).text());
     });
 });
 ```
@@ -45,10 +45,10 @@ var logger=fx.logger;
 let i=0;
 scheduler.addJob("default",'*/1 * * * * ?',function(){
    i++;
-   logger.debug(i);
-   logger.info(i);
-   logger.warning(i);
-   logger.err(i);
+   logger.debug('scheduler',i);
+   logger.info('scheduler',i);
+   logger.warning('scheduler',i);
+   logger.err('scheduler',i);
 });
 scheduler.run();
 ```

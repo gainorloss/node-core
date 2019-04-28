@@ -12,7 +12,7 @@ const build = require('./components/build');
 const gateway = require('./components/gateway');
 const auth = require('./components/auth');
 const env = require('./components/env');
-
+const mvc = require('./components/mvc');
 const fx = {
     httpServer,
     readme,
@@ -25,7 +25,8 @@ const fx = {
     build,
     gateway,
     auth,
-    env
+    env,
+    mvc
 };
 
 fx.hooks = {};

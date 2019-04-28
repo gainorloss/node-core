@@ -1,6 +1,6 @@
 {
   "name": "node-dev-fx",
-  "version": "0.1.24",
+  "version": "0.1.30",
   "description": "",
   "main": "index.js",
   "dependencies": {
@@ -12,6 +12,7 @@
     "consolidate": "^0.15.1",
     "cookie-parser": "^1.4.4",
     "express": "^4.16.4",
+    "express-router": "0.0.1",
     "http-proxy": "^1.17.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.5.2",

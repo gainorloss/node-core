@@ -4,9 +4,10 @@ const cookieParser=require('cookie-parser');
 const http = require('http');
 const path = require('path');
 const logger = require('./logger');
+const router=require('express-router');
 
 const app = express();
-app.set('views', path.join(__dirname, "views"));
+app.set('views', path.join(__dirname, "../../../src/pages"));
 app.set('view engine', "ejs");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -31,7 +32,9 @@ app.use(function (err, req, res, next) {
 });
 
 const server = http.createServer(app);
-const mvc = {};
+const mvc = {
+    router
+};
 
 /**
  * Starts server.
@@ -43,4 +46,8 @@ mvc.start = function (host, port) {
         logger.info("application", ["Server started，please visit http://", host, ":", port].join(''));
     });
 };
+
+mvc.use=function(path,router){
+    app.use(path,router);
+}
 module.exports = mvc;

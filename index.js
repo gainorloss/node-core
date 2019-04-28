@@ -12,6 +12,7 @@ const build = require('./components/build');
 const gateway = require('./components/gateway');
 const auth = require('./components/auth');
 const env = require('./components/env');
+const mailSender = require('./components/mailSender');
 const mvc = require('./components/mvc');
 const fx = {
     httpServer,
@@ -26,6 +27,7 @@ const fx = {
     gateway,
     auth,
     env,
+    mailSender,
     mvc
 };
 

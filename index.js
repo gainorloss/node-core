@@ -13,7 +13,7 @@ const gateway = require('./components/gateway');
 const auth = require('./components/auth');
 const env = require('./components/env');
 const mailSender = require('./components/mailSender');
-const mvc = require('./components/mvc');
+const site = require('./components/site');
 const fx = {
     httpServer,
     readme,
@@ -28,7 +28,7 @@ const fx = {
     auth,
     env,
     mailSender,
-    mvc
+    site
 };
 
 fx.hooks = {};
